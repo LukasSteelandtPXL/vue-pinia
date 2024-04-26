@@ -19,7 +19,7 @@
             <RouterLink class="nav-link border border-primary rounded mx-2" to="/bs">Bootstrap</RouterLink>
           </li>
           <li class="nav-item">
-            <RouterLink class="nav-link border border-primary rounded mx-2" to="/counter">Counter <span class="badge bg-primary text-secondary">*</span></RouterLink>
+            <RouterLink class="nav-link border border-primary rounded mx-2" to="/counter">Counter <span class="badge bg-primary text-secondary">{{ counterStore.counter }}</span></RouterLink>
           </li>
         </ul>
       </div>
@@ -27,9 +27,17 @@
   </nav>
 </template>
 <script>
+import {useExampleStore} from "@/stores/CounterStore.js";
+
 export default {
-    
+  data() {
+    return {
+      counterStore: useExampleStore()
+    }
+  },
 }
+
+
 </script>
 <style lang="">
     
